@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
+    "@workspace/config": "workspace:*",
     "dotenv": "^16.6.1",
     "drizzle-orm": "^0.44.5",
     "ws": "^8.18.3"

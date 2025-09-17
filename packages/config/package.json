@@ -1,0 +1,23 @@
+{
+  "name": "@workspace/config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@workspace/typescript-config": "workspace:*"
+  },
+  "exports": {
+    "./env": "./src/env.ts"
+  }
+}

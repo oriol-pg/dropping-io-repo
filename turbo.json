@@ -15,7 +15,20 @@
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["DB_URL", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL"]
+    },
+    "db:generate": {
+      "env": ["DB_URL", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL"]
+    },
+    "db:migrate": {
+      "env": ["DB_URL", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL"]
+    },
+    "db:studio": {
+      "env": ["DB_URL", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL"]
+    },
+    "db:push": {
+      "env": ["DB_URL", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL"]
     }
   }
 }
