@@ -1,13 +1,12 @@
-'use client'
+import { Button } from "@workspace/ui/components/button"
 
-import { Button } from "@dropping/ui/button";
-
-export default function Home() {
+export default function Page() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Button>Click me</Button>
-        </main>
+    <div className="flex items-center justify-center min-h-svh">
+      <div className="flex flex-col items-center justify-center gap-4">
+        <h1 className="text-2xl font-bold">Hello World</h1>
+        <Button size="sm">Button</Button>
+      </div>
     </div>
-  );
+  )
 }
