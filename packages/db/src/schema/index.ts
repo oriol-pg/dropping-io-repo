@@ -1,2 +1,5 @@
+import * as authSchema from './auth';
 
-export const schema = { };
+export const schema = {
+  ...authSchema
+};

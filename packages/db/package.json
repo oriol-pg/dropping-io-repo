@@ -2,7 +2,7 @@
   "name": "@workspace/db",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/client.ts",
   "scripts": {
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
