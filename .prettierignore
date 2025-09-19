@@ -1,0 +1,12 @@
+# .prettierignore
+node_modules
+dist
+build
+.next
+.vscode
+*.min.js
+*.min.css
+.env
+.env.local
+.DS_Store
+coverage

@@ -1,0 +1,30 @@
+---
+// src/layouts/Layout.astro or pages where you need it
+const API_URL = Astro.locals.runtime.env.API_URL;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Dropping.io - Login</title>
+    <script define:vars={{ API_URL }}>
+      // Make API URL available to client components
+      window.__CONFIG__ = { API_URL };
+    </script>
+  </head>
+  <body
+    class="antialiased font-sans bg-gradient-to-br from-background to-muted min-h-screen flex items-center justify-center p-4"
+  >
+    <div class="w-full max-w-md">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-foreground mb-2">Dropping.io</h1>
+        <p class="text-muted-foreground">Your drops, your way</p>
+      </div>
+      <slot />
+    </div>
+  </body>
+</html>

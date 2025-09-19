@@ -1,11 +1,10 @@
-import { env } from '@workspace/config/env';
-import type { Config } from 'drizzle-kit';
+import type { Config } from "drizzle-kit";
 
 export default {
-  schema: './src/schema',
-  out: './src/migrations',
+  schema: "./src/schema",
+  out: "./src/migrations",
   dbCredentials: {
-    url: env.DB_URL,
+    url: process.env.DB_URL!,
   },
-  dialect: 'postgresql'
+  dialect: "postgresql",
 } satisfies Config;
