@@ -23,6 +23,10 @@
           "custom_domain": true,
         },
       ],
+      "vars": {
+        "BETTER_AUTH_ALLOWED_ORIGINS": "https://stage.pokkipay.com",
+        "BETTER_AUTH_URL": "https://stage-api.pokkipay.com",
+      },
       "name": "dropping-io-api-stage",
     },
     "production": {
@@ -32,6 +36,10 @@
           "custom_domain": true,
         },
       ],
+      "vars": {
+        "BETTER_AUTH_ALLOWED_ORIGINS": "https://pokkipay.com",
+        "BETTER_AUTH_URL": "https://api.pokkipay.com",
+      },
       "name": "dropping-io-api-production",
     },
   },
