@@ -25,6 +25,8 @@ export const _createIdentityClient = (
 
   const hasSocialProviders = Object.keys(socialProviders).length > 0;
 
+  console.log(`Will create identity client with trusted origins: ${trustedOrigins.join(', ')}`);
+
   return betterAuth({
       database: drizzleAdapter(_db, {
         provider: "pg",
