@@ -25,6 +25,8 @@ export const _createIdentityClient = (
 
   const hasSocialProviders = Object.keys(socialProviders).length > 0;
 
+  console.log(`Will create identity client with trusted origins: ${trustedOrigins.join(', ')}`);
+
   return betterAuth({
       database: drizzleAdapter(_db, {
         provider: "pg",
@@ -47,8 +49,13 @@ export const _createIdentityClient = (
 export const getIdentityClient = (
   props: CreateIdentityClientProps,
 ) => {
+  console.log(`Will create identity client with trusted origins: ${props.trustedOrigins.join(', ')}`);
+  let hasCreated = false;
   if (!identityClient) {
+    console.log(`Creating identity client`);
     identityClient = _createIdentityClient(props, db);
+    hasCreated = true;
   }
+  console.log(`Returning identity client ${hasCreated ? 'new' : 'existing'}`);
   return identityClient;
 };

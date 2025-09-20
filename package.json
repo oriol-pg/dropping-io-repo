@@ -2,7 +2,6 @@
   "name": "dropping-io",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -11,8 +10,12 @@
     "db:migrate": "turbo run db:migrate",
     "db:studio": "turbo run db:studio",
     "db:push": "turbo run db:push",
-    "deploy:stage": "turbo run deploy:stage",
-    "deploy:production": "turbo run deploy:production"
+    "build:front": "pnpm --filter @workspace/front build",
+    "build:api": "pnpm --filter @workspace/api build",
+    "deploy:stage:front": "pnpm --filter @workspace/front deploy:stage",
+    "deploy:stage:api": "pnpm --filter @workspace/api deploy:stage",
+    "deploy:production:front": "pnpm --filter @workspace/front deploy:production",
+    "deploy:production:api": "pnpm --filter @workspace/api deploy:production"
   },
   "devDependencies": {
     "prettier": "^3.6.2",

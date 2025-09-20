@@ -1,5 +1,5 @@
 {
-	"name": "front",
+	"name": "@workspace/front",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
@@ -7,8 +7,8 @@
 		"build": "astro build",
 		"preview": "astro build && wrangler dev",
 		"astro": "astro",
-		"deploy:stage": "astro build && wrangler deploy --env stage",
-		"deploy:production": "astro build && wrangler deploy --env production",
+		"deploy:stage": "pnpm install && astro build && wrangler deploy --env stage",
+		"deploy:production": "pnpm install && astro build && wrangler deploy --env production",
 		"cf-typegen": "wrangler types --env stage"
 	},
 	"dependencies": {
