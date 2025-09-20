@@ -20,8 +20,13 @@ app.use(
 app.get('/health', async (c) => {
   console.log('Getting health');
   const result = await healthRepo.getHealth();
+
+  const allEnv = Object.keys(c.env);
   console.log('Result', result);
-  return c.json(result);
+  return c.json({
+    ...result,
+    allEnv,
+  });
 });
 
 app.route('/auth/*', betterAuthApp);
