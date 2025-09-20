@@ -17,15 +17,24 @@ app.use('*', async (c, next) => {
   return corsMiddlewareHandler(c, next);
 });
 
+const hiddenEnv = ['BETTER_AUTH_SECRET', 'DB_URL'];
 app.get('/health', async (c) => {
   console.log('Getting health');
   const result = await healthRepo.getHealth();
 
-  const allEnv = Object.keys(c.env);
+  const allEnv = Object.fromEntries(
+    Object.entries(c.env).map(([key, value]) => [key, hiddenEnv.includes(key) ? '********' : value])
+  );
+
+  const allowedOrigins = c.env.BETTER_AUTH_ALLOWED_ORIGINS?.split(';') || [];
+
   console.log('Result', result);
+  console.log('Allowed Origins:', allowedOrigins);
+
   return c.json({
     ...result,
     allEnv,
+    allowedOrigins,
   });
 });
 
