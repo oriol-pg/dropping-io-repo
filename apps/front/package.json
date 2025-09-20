@@ -7,8 +7,9 @@
 		"build": "astro build",
 		"preview": "astro build && wrangler dev",
 		"astro": "astro",
-		"deploy": "astro build && wrangler deploy",
-		"cf-typegen": "wrangler types"
+		"deploy:stage": "astro build && wrangler deploy --env stage",
+		"deploy:production": "astro build && wrangler deploy --env production",
+		"cf-typegen": "wrangler types --env stage"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.8",

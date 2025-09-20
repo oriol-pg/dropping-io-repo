@@ -17,10 +17,10 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "env": {
     "stage": {
-      "name": "dropping-io-stage",
+      "name": "dropping-io-api-stage",
     },
     "production": {
-      "name": "dropping-io-production",
+      "name": "dropping-io-api-production",
     },
   },
   "dev": {
