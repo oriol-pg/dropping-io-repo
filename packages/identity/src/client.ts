@@ -1,4 +1,5 @@
 import db from "@workspace/db/client";
+import { sendMagicLinkEmail } from "@workspace/notifications/email";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { magicLink } from "better-auth/plugins";
@@ -7,6 +8,7 @@ type CreateIdentityClientProps = {
   secret: string;
   baseURL: string;
   trustedOrigins: string[];
+  emailApiKey: string;
   socialProviders: Record<string, {
     clientId: string;
     clientSecret: string;
@@ -19,7 +21,7 @@ export type IdentityClient = ReturnType<typeof _createIdentityClient>;
 let identityClient: IdentityClient | null = null;
 
 export const _createIdentityClient = (
-  { secret, baseURL, trustedOrigins, socialProviders }: CreateIdentityClientProps,
+  { secret, baseURL, trustedOrigins, socialProviders, emailApiKey }: CreateIdentityClientProps,
   _db: Database,
 ) => {
 
@@ -38,7 +40,7 @@ export const _createIdentityClient = (
       plugins: [
       magicLink({
         sendMagicLink: async ({ email, url }) => {
-          console.log({ url });
+          await sendMagicLinkEmail(emailApiKey, email, url);
         },
       }),
     ],

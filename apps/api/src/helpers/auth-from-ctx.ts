@@ -14,6 +14,7 @@ export const authFromCtx = (c: Context<IdentityContext>) => {
   return getIdentityClient({
     secret: c.env.BETTER_AUTH_SECRET,
     baseURL: c.env.BETTER_AUTH_URL,
+    emailApiKey: c.env.RESEND_API_KEY,
     trustedOrigins,
     socialProviders: {},
   });
