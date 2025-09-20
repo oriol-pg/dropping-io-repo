@@ -17,9 +17,21 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "env": {
     "stage": {
+      "routes": [
+        {
+          "pattern": "stage-api.pokkipay.com",
+          "custom_domain": true,
+        },
+      ],
       "name": "dropping-io-api-stage",
     },
     "production": {
+      "routes": [
+        {
+          "pattern": "api.pokkipay.com",
+          "custom_domain": true,
+        },
+      ],
       "name": "dropping-io-api-production",
     },
   },

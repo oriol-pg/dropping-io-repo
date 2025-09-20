@@ -20,9 +20,21 @@
 	},
 	"env": {
 		"stage": {
+			"routes": [
+				{
+					"pattern": "stage.pokkipay.com",
+					"custom_domain": true,
+				},
+			],
 			"name": "dropping-io-front-stage",
 		},
 		"production": {
+			"routes": [
+				{
+					"pattern": "pokkipay.com",
+					"custom_domain": true,
+				},
+			],
 			"name": "dropping-io-front-production",
 		},
 	}
