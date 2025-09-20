@@ -5,17 +5,17 @@ import betterAuthApp from './handlers/better-auth.handler';
 import { type IdentityContext } from './middlewares/identity';
 const app = new Hono<IdentityContext>().basePath('/api');
 
-app.use(
-  '*', // or replace with "*" to enable cors for all routes
-  cors({
-    origin: 'http://localhost:4321', // replace with your origin
+app.use('*', async (c, next) => {
+  const corsMiddlewareHandler = cors({
+    origin: c.env.BETTER_AUTH_ALLOWED_ORIGINS.split(';'),
     allowHeaders: ['Content-Type', 'Authorization'],
     allowMethods: ['POST', 'GET', 'OPTIONS', 'PUT', 'DELETE'],
     exposeHeaders: ['Content-Length'],
     maxAge: 600,
     credentials: true,
-  })
-);
+  });
+  return corsMiddlewareHandler(c, next);
+});
 
 app.get('/health', async (c) => {
   console.log('Getting health');
