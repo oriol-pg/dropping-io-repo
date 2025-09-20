@@ -47,6 +47,9 @@ export const _createIdentityClient = (
 export const getIdentityClient = (
   props: CreateIdentityClientProps,
 ) => {
+  console.log({
+    trustedOrigins: props.trustedOrigins,
+  })
   if (!identityClient) {
     identityClient = _createIdentityClient(props, db);
   }
