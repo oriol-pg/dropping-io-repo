@@ -37,6 +37,12 @@ export const _createIdentityClient = (
       baseURL: baseURL,
       trustedOrigins: trustedOrigins,
       socialProviders: {...(hasSocialProviders ? socialProviders : {})},
+      advanced: {
+        crossSubDomainCookies: {
+            enabled: true,
+            domain: "*.pokkipay.com",
+        },
+      },
       plugins: [
       magicLink({
         sendMagicLink: async ({ email, url }) => {
