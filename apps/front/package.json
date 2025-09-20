@@ -1,5 +1,5 @@
 {
-	"name": "front",
+	"name": "@workspace/front",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
