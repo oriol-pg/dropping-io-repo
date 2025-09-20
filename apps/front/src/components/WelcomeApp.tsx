@@ -24,7 +24,7 @@ export default function WelcomeApp() {
 
   const handleLogin = async (email: string) => {
     const userObj = { email, name: email.split("@")[0] };
-    await getAuthClient().signIn.magicLink({ email, callbackURL: `http://${window.location.host}` });
+    await getAuthClient().signIn.magicLink({ email, callbackURL: `${window.location.protocol}://${window.location.host}` });
     setUser(userObj);
   };
 
