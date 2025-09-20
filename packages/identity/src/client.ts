@@ -40,7 +40,7 @@ export const _createIdentityClient = (
       advanced: {
         crossSubDomainCookies: {
             enabled: true,
-            domain: "*.pokkipay.com",
+            domain: ".pokkipay.com",
         },
       },
       plugins: [
