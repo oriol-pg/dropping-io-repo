@@ -28,7 +28,7 @@ app.get('/health', async (c) => {
 
   const allowedOrigins = c.env.BETTER_AUTH_ALLOWED_ORIGINS?.split(';') || [];
 
-  console.log('Result :)', result);
+  console.log('Result a :)', result);
   console.log('Allowed Origins:', allowedOrigins);
 
   return c.json({
