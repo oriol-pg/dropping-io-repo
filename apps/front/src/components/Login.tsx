@@ -30,7 +30,7 @@ export default function Login({ onLogin, isLoading = false }: LoginProps) {
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold">Welcome Back STAGE ENV</CardTitle>
+        <CardTitle className="text-2xl font-bold">Welcome Back STAGE ENV 2</CardTitle>
         <CardDescription>
           Enter your email to get started
         </CardDescription>
