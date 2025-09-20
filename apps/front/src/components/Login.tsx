@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@work
 import { Input } from '@workspace/ui/components/input';
 import { Label } from '@workspace/ui/components/label';
 import { useState } from 'react';
+import { API_URL } from '../lib/settings';
 
 interface LoginProps {
   onLogin: (email: string) => void;
@@ -30,7 +31,7 @@ export default function Login({ onLogin, isLoading = false }: LoginProps) {
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold">Welcome Back STAGE ENV 2</CardTitle>
+        <CardTitle className="text-2xl font-bold">Welcome Back STAGE {API_URL()}</CardTitle>
         <CardDescription>
           Enter your email to get started
         </CardDescription>
