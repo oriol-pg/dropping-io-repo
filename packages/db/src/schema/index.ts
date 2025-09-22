@@ -1,3 +1,4 @@
+import type { Drop, Price, Product } from "@workspace/db/schema/types";
 import * as authSchema from "./auth";
 import * as catalogSchema from "./catalaog";
 import * as commerceSchema from "./commerce";
@@ -10,4 +11,20 @@ export const schema = {
   ...commerceSchema,
   ...catalogSchema,
   ...inventorySchema,
+};
+
+export type { Drop, Price, Product };
+
+const _product: Product = {
+  active: true,
+  attributes: {},
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  metadata: {},
+  dropId: "1",
+  images: [""],
+  name: "Product 1",
+  description: "Product 1 description",
+  id: "1",
+  stripeProductId: "1",
 };
